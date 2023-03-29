@@ -1,0 +1,26 @@
+:root {
+  --dimension: 100px;
+}
+
+.row {
+  height: var(--dimension);
+  width: calc(7 * var(--dimension));
+  display: flex;
+}
+
+.cell {
+  height: var(--dimension);
+  width: var(--dimension);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+  position: relative;
+}
+
+.hole {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+}

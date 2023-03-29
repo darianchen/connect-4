@@ -1,16 +1,21 @@
 :root {
-  --dimension: 100px;
+  --cell-dimension: 100px;
+  --piece-dimension: 50px;
+}
+
+#board {
+  display: inline-block;
 }
 
 .row {
-  height: var(--dimension);
-  width: calc(7 * var(--dimension));
+  height: var(--cell-dimension);
+  width: calc(7 * var(--cell-dimension));
   display: flex;
 }
 
 .cell {
-  height: var(--dimension);
-  width: var(--dimension);
+  height: var(--cell-dimension);
+  width: var(--cell-dimension);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,9 +23,23 @@
   position: relative;
 }
 
-.hole {
-  height: 50px;
-  width: 50px;
+.empty {
+  height: var(--piece-dimension);
+  width: var(--piece-dimension);
   background-color: white;
+  border-radius: 50%;
+}
+
+.red {
+  height: var(--piece-dimension);
+  width: var(--piece-dimension);
+  background-color: red;
+  border-radius: 50%;
+}
+
+.blue {
+  height: var(--piece-dimension);
+  width: var(--piece-dimension);
+  background-color: yellow;
   border-radius: 50%;
 }

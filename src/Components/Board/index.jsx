@@ -6,7 +6,12 @@ function Board() {
     let board = Array.from({ length: 6 }, () => Array.from({ length: 7 }, () => null));
 
     return (
-        <>
+        <div>
+            <div id="dropzone">
+                {board[0].map((col, colIdx) => {
+                    return <div className="drop"></div>
+                })}
+            </div>
             <div id="board">
                 {board.map((row, rowIdx) => {
                     return <div className="row" key={rowIdx}>
@@ -18,7 +23,7 @@ function Board() {
                     </div>
                 })}
             </div>
-        </>
+        </div>
     );
 };
 

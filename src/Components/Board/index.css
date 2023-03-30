@@ -37,9 +37,20 @@
   border-radius: 50%;
 }
 
-.blue {
+.yellow {
   height: var(--piece-dimension);
   width: var(--piece-dimension);
   background-color: yellow;
   border-radius: 50%;
+}
+
+#dropzone {
+  display: flex;
+  justify-content: center;
+}
+
+.drop {
+  height: var(--cell-dimension);
+  width: 98px;
+  border: solid 1px black;
 }

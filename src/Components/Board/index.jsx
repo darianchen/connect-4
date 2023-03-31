@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./index.css";
+import drop from '../../assets/audio/drop.mp3';
 
 function Board({ board, onReset }) {
   const [turn, setTurn] = useState(1);
   const [gameOver, setGameOver] = useState(false);
   const color = turn % 2 === 0 ? "yellow" : "red";
   const styles = { "--hover-color": color };
+  const dropAudio = new Audio(drop);
 
 
   const handleReset = () => {
@@ -24,6 +26,7 @@ function Board({ board, onReset }) {
     for (let row = board.length - 1; row > -1; row--) {
       if (!board[row][col]) {
         board[row][col] = color[0].toUpperCase();
+        dropAudio.play();
 
         if (checkWin(row, col, color, board)) {
           setGameOver(true);

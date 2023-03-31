@@ -1,12 +1,17 @@
+import { useState } from "react";
 import './App.css'
 import Board from './Components/Board'
 
 function App() {
-  let board = Array.from({ length: 6 }, () => Array.from({ length: 7 }, () => null));
+  const [board, setBoard] = useState(Array.from({ length: 6 }, () => Array.from({ length: 7 }, () => null)));
+
+  const onReset = () => {
+    setBoard(Array.from({ length: 6 }, () => Array.from({ length: 7 }, () => null)));
+  }
 
   return (
     <div className="App">
-      <Board board={board} />
+      <Board board={board} onReset={onReset} />
     </div>
   );
 };

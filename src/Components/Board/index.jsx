@@ -1,11 +1,17 @@
 import { useState } from "react";
 import "./index.css";
 
-function Board({ board }) {
+function Board({ board, onReset }) {
   const [turn, setTurn] = useState(1);
   const [gameOver, setGameOver] = useState(false);
   const color = turn % 2 === 0 ? "yellow" : "red";
   const styles = { "--hover-color": color };
+
+
+  const handleReset = () => {
+    setTurn(1);
+    onReset();
+  }
 
   const handleMove = (e) => {
     const col = parseInt(e.target.getAttribute("idx"));
@@ -77,6 +83,7 @@ function Board({ board }) {
   return (
     <div>
       <div>Turn is {turn}</div>
+      <button onClick={handleReset}>New Game</button>
       <div id="dropzone" style={styles}>
         {board[0].map((col, colIdx) => {
           return (
